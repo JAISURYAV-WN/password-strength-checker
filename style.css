@@ -1,0 +1,124 @@
+:root {
+    --bg-color: #f4f6f9;
+    --card-bg: #ffffff;
+    --text-color: #333333;
+    --border-color: #cccccc;
+    --danger: #ff4d4d;
+    --warning: #ffad33;
+    --info: #3399ff;
+    --success: #2ecc71;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.card {
+    background: var(--card-bg);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    margin-top: 0;
+    color: var(--text-color);
+    font-size: 24px;
+    text-align: center;
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 60px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus {
+    border-color: var(--info);
+}
+
+#toggle-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: var(--info);
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.meter-container {
+    background-color: #e0e0e0;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+#strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s, background-color 0.3s;
+}
+
+#strength-text {
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    font-size: 14px;
+}
+
+.requirements {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.requirements li {
+    font-size: 14px;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 20px;
+    transition: color 0.3s;
+}
+
+.requirements li::before {
+    position: absolute;
+    left: 0;
+}
+
+.invalid {
+    color: #888888;
+}
+
+.invalid::before {
+    content: "❌";
+}
+
+.valid {
+    color: var(--success);
+}
+
+.valid::before {
+    content: "✓";
+}
